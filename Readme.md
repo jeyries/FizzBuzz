@@ -27,3 +27,9 @@ Easy to maintain by other developers
  Of course I can adapt to project style if project style is Storyboard and Segue, I can do that also .
  
 Other possibilites I can do is UIKit + RxSwift or even better, SwiftUI + Combine 😍
+
+# Screenshots
+
+![FizzBuzz](1-fizzbuzz.png "FizzBuzz")
+![Results](2-results.png "Results")
+![Statistics](3-statistics.png  "Statistics")
