@@ -24,7 +24,7 @@ final class FormViewController: UIViewController {
     override func loadView() {
         title = "FizzBuzz"
         view = rootView
-        model.refresh = refresh
+        model.refresh = { [weak self] in self?.refresh() }
     }
     
     private func refresh() {
