@@ -43,6 +43,7 @@ final class FormViewController: UIViewController {
         view.addSubview(stackView)
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         return view
     }()
     
@@ -99,7 +100,12 @@ final class FormViewController: UIViewController {
     }()
     
     @objc private func computeAction() {
+        dismissKeyboard()
         callback?(.compute(model.fizzBuzz))
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     private lazy var errorLabel: UILabel = {
