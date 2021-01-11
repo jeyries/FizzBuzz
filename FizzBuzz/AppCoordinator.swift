@@ -38,7 +38,10 @@ final class AppCoordinator {
     }()
     
     private lazy var formViewController: UIViewController = {
-        let controller = FormViewController()
+        let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "form-view-controller") as! FormViewController2
+        //let controller = FormViewController2(nibName: nil, bundle: nil)
+        //let controller = FormViewController()
         controller.callback = { [weak self] action in
             switch action {
             case .compute(let fizzBuzz):
