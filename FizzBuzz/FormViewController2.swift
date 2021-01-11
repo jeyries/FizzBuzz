@@ -31,14 +31,25 @@ class FormViewController2: UIViewController {
         callback?(.compute(model.fizzBuzz))
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        switch segue.identifier {
+        case "segue-component-1":
+            let controller = segue.destination as! FormComponentViewController
+            controller.labelText = "label 1"
+            
+        case "segue-component-2":
+            let controller = segue.destination as! FormComponentViewController
+            controller.labelText = "label 2"
+        
+        default:
+            fatalError()
+        }
     }
-    */
 
 }

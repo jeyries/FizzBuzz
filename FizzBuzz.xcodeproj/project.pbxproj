@@ -23,6 +23,7 @@
 		F9B62F9425AC63E8001FB1D2 /* FormViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B62F9225AC63E8001FB1D2 /* FormViewController2.swift */; };
 		F9B62F9525AC63E8001FB1D2 /* FormViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B62F9325AC63E8001FB1D2 /* FormViewController2.xib */; };
 		F9B62F9A25AC6659001FB1D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B62F9925AC6659001FB1D2 /* MainStoryboard.storyboard */; };
+		F9B62F9F25AC6B71001FB1D2 /* FormComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B62F9E25AC6B71001FB1D2 /* FormComponentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		F9B62F9225AC63E8001FB1D2 /* FormViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController2.swift; sourceTree = "<group>"; };
 		F9B62F9325AC63E8001FB1D2 /* FormViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormViewController2.xib; sourceTree = "<group>"; };
 		F9B62F9925AC6659001FB1D2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F9B62F9E25AC6B71001FB1D2 /* FormComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				F9B62F9225AC63E8001FB1D2 /* FormViewController2.swift */,
 				F9B62F9325AC63E8001FB1D2 /* FormViewController2.xib */,
 				F9B62F9925AC6659001FB1D2 /* MainStoryboard.storyboard */,
+				F9B62F9E25AC6B71001FB1D2 /* FormComponentViewController.swift */,
 			);
 			path = FizzBuzz;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				F9B62F9425AC63E8001FB1D2 /* FormViewController2.swift in Sources */,
 				F97B6DC4258C19D400CA8652 /* FormComponent.swift in Sources */,
 				F97B6D42258BB1E600CA8652 /* AppDelegate.swift in Sources */,
+				F9B62F9F25AC6B71001FB1D2 /* FormComponentViewController.swift in Sources */,
 				F97B6DA1258BC00E00CA8652 /* ResultsViewController.swift in Sources */,
 				F97B6D8B258BB44400CA8652 /* FizzBuzz.swift in Sources */,
 				F97B6DBC258C06E100CA8652 /* StatisticsService.swift in Sources */,
