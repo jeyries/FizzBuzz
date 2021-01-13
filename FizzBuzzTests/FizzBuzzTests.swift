@@ -21,4 +21,9 @@ class FizzBuzzTests: XCTestCase {
         XCTAssertEqual(generated, expected)
     }
 
+    func testViewModel() throws {
+        let model = FormViewModel()
+        model.updateLimit(text: "1000000000")
+        XCTAssertFalse(model.isComputeEnabled)
+    }
 }

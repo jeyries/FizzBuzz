@@ -28,7 +28,7 @@ final class ResultsViewController: UIViewController {
     
     override func loadView() {
         title = "Results"
-        view = tableView
+        view = collectionView
     }
     
     private lazy var tableView: UITableView = {
@@ -38,7 +38,22 @@ final class ResultsViewController: UIViewController {
         tableView.register(ResultCell.self, forCellReuseIdentifier: "ResultCell")
         return tableView
     }()
-
+    
+    private lazy var layout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: 50, height: 50)
+        return layout
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.dataSource = self;
+        collectionView.backgroundColor = .white
+        collectionView.register(ResultCollectionCell.self, forCellWithReuseIdentifier: "ResultCollectionCell")
+        return collectionView
+    }()
+    
 }
 
 
@@ -64,3 +79,54 @@ private class ResultCell: UITableViewCell {
     }
     
 }
+
+///
+
+extension ResultsViewController: UICollectionViewDataSource {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fizzBuzz.limit
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCollectionCell", for: indexPath as IndexPath) as! ResultCollectionCell
+        let text = fizzBuzz.compute(at: 1+indexPath.row)
+        cell.configure(text: text)
+        return cell
+    }
+}
+
+private class ResultCollectionCell: UICollectionViewCell {
+    
+    private lazy var infoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = .green
+        return label
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(infoLabel)
+        infoLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        infoLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        infoLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        infoLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(text: String) {
+        self.infoLabel.text = text
+    }
+    
+}
+
+

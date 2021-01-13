@@ -29,7 +29,7 @@ final class FormViewModel {
     // private properties
     private var int1: Int = 3
     private var int2: Int = 5
-    private var limit: Int = 100
+    private var limit: Int = 10_000_000
     private var str1: String = "fizz"
     private var str2: String = "buzz"
     
@@ -118,7 +118,7 @@ extension FormViewModel {
         }
         
         if let number = Int(limitString) {
-            if number >= 1 {
+            if number >= 1 /*&& number <= 100000*/ {
                 limit = number
             } else  {
                 limitIsValid = false
